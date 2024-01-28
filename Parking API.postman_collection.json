@@ -1,0 +1,842 @@
+{
+	"info": {
+		"_postman_id": "cd00d26a-e3ad-462a-b319-6e1dbf35b71f",
+		"name": "Parking API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32530495"
+	},
+	"item": [
+		{
+			"name": "ADMIN REQUEST",
+			"item": [
+				{
+					"name": "INDICATORS",
+					"item": [
+						{
+							"name": "Search vehicles parked first time by parkingId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTcwNjQ4OTM0Niwicm9sZSI6IkFETUlOIiwiaWQiOjF9.-S9xb8o9Or3Ay2iCPdx8KbJC6AfDAJWNlWNmshc95lU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/parkingRecord/parkedVehicles/firstTime/parkingId/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"parkingRecord",
+										"parkedVehicles",
+										"firstTime",
+										"parkingId",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search for the top 10 vehicles that have been registered the most times in the different parking lots",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTcwNjQ4OTk0Mywicm9sZSI6IkFETUlOIiwiaWQiOjF9.N26N_I-9lRjCvwjW93VdRC2-_USuSrJwKZ6z34bTLmo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/parkingRecord/parkedVehicles/mostRegistered",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"parkingRecord",
+										"parkedVehicles",
+										"mostRegistered"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search for the top 10 vehicles that have been registered the most times in the different parking lots by parkingId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTcwNjQ5MTY1MSwicm9sZSI6IkFETUlOIiwiaWQiOjF9.Ifz3at0XYa6qvKhAQLMdAYygdX6dzgI4N-P0ys-t3os",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/parkingRecord/parkedVehicles/mostRegistered/parkingId/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"parkingRecord",
+										"parkedVehicles",
+										"mostRegistered",
+										"parkingId",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search parked vehicles by plate coincidence",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTcwNjQ4NTMyMSwicm9sZSI6IkFETUlOIiwiaWQiOjF9.8qho_PVo8O0VsVyi64_LYnMPC1x1V9uO4T9SYfYfSv8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/parkingRecord/parkedVehicles/matches/plate/HT",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"parkingRecord",
+										"parkedVehicles",
+										"matches",
+										"plate",
+										"HT"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Set of HTTP requests to obtain the indicators for the user with admin role"
+				},
+				{
+					"name": "PARKING CRUD",
+					"item": [
+						{
+							"name": "add parking",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTcwNjQ3MzgyNywicm9sZSI6IkFETUlOIiwiaWQiOjF9.i6EArrirGaANfIoIdpF3WpvM3W5fm6J98WfsBVhP3RA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Parking Two\",\r\n    \"hourlyCost\": 20.0,\r\n    \"maxParkingSpace\": 10,\r\n    \"userId\": 7\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/parking/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"parking",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete parking",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTcwNjQ3NjA4OCwicm9sZSI6IkFETUlOIiwiaWQiOjF9.awXVqrHomqxevjtxhhv5gf2rrEIhpauL3SNLtl2PvYU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/parking/delete/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"parking",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update parking",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTcwNjQ3NTcwMiwicm9sZSI6IkFETUlOIiwiaWQiOjF9.VV8fikR-fiDv0e0x-mpR3RYVCKk48WxMitjSZuEoQNg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Parking One\",\r\n    \"hourlyCost\": 10.0,\r\n    \"maxParkingSpace\": 10,\r\n    \"userId\": 6\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/parking/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"parking",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "parking list",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTcwNjQ3NjA4OCwicm9sZSI6IkFETUlOIiwiaWQiOjF9.awXVqrHomqxevjtxhhv5gf2rrEIhpauL3SNLtl2PvYU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/parking/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"parking",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get parking",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTcwNjQ3NjA4OCwicm9sZSI6IkFETUlOIiwiaWQiOjF9.awXVqrHomqxevjtxhhv5gf2rrEIhpauL3SNLtl2PvYU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/parking/find/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"parking",
+										"find",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Set of HTTP requests for the parking CRUD"
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@mail.com\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTcwNjQ3NTcwMiwicm9sZSI6IkFETUlOIiwiaWQiOjF9.VV8fikR-fiDv0e0x-mpR3RYVCKk48WxMitjSZuEoQNg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"socio@mail.com\",\r\n    \"password\": \"socio\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send mail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTcwNjQ4Mjk0Miwicm9sZSI6IkFETUlOIiwiaWQiOjF9.1PnOcxTH3QzRUUy6ep4hN-b_ffOuz8DN2U_KnSwDnYA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"partner@mail.com\",\r\n    \"plate\": \"123HT4\",\r\n    \"message\": \"Test message\",\r\n    \"parkingId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/sendingMail/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"sendingMail",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List vehicles parking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTcwNjQ3NjA4OCwicm9sZSI6IkFETUlOIiwiaWQiOjF9.awXVqrHomqxevjtxhhv5gf2rrEIhpauL3SNLtl2PvYU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/parkingRecord/parkedVehicles/parkingId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"parkingRecord",
+								"parkedVehicles",
+								"parkingId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SOCIO REQUEST",
+			"item": [
+				{
+					"name": "INDICATORS",
+					"item": [
+						{
+							"name": "Search parked vehicles by plate coincidence and userId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzb2Npb0BtYWlsLmNvbSIsImV4cCI6MTcwNjQ4NTkyNSwicm9sZSI6IlNPQ0lPIiwiaWQiOjd9.NDwrsAKe4BWmdRX_8dxZ5iNIVoPyVU3oyk4TFc9ACes",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/parkingRecord/parkedVehicles/matches/plate/HT/userId/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"parkingRecord",
+										"parkedVehicles",
+										"matches",
+										"plate",
+										"HT",
+										"userId",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get parking earnings by parkingId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzb2Npb0BtYWlsLmNvbSIsImV4cCI6MTcwNjQ4ODUxOCwicm9sZSI6IlNPQ0lPIiwiaWQiOjd9.Enk2RQZAjzGjHDWFYo4ibQsCZV-0uAmaPyEobfaZGBc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/history/earnings/parkingId/1/userId/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"history",
+										"earnings",
+										"parkingId",
+										"1",
+										"userId",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search vehicles parked first time by parkingId and userId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzb2Npb0BtYWlsLmNvbSIsImV4cCI6MTcwNjQ4OTU1OSwicm9sZSI6IlNPQ0lPIiwiaWQiOjd9.QEK4mk02MrcW-AXKczHMq-Ba5oVdfhlyl08uNo4gkWo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/parkingRecord/parkedVehicles/firstTime/parkingId/1/userId/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"parkingRecord",
+										"parkedVehicles",
+										"firstTime",
+										"parkingId",
+										"1",
+										"userId",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search for the top 10 vehicles that have been registered the most times in the different parking lots by userId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzb2Npb0BtYWlsLmNvbSIsImV4cCI6MTcwNjQ5MDY1NSwicm9sZSI6IlNPQ0lPIiwiaWQiOjd9.WdtjQUYxasN0RKcddYdDNxTfaq8zOHb1lVoEOt-J4oM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/parkingRecord/parkedVehicles/mostRegistered/userId/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"parkingRecord",
+										"parkedVehicles",
+										"mostRegistered",
+										"userId",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search for the top 10 vehicles that have been registered the most times in the different parking lots by parkingId and userId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzb2Npb0BtYWlsLmNvbSIsImV4cCI6MTcwNjQ5MTk1Mywicm9sZSI6IlNPQ0lPIiwiaWQiOjd9.za-h0mPVC4yBwhLQXgRAJWImFXjTdS7CoHGoZ829wVU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/parkingRecord/parkedVehicles/mostRegistered/parkingId/1/userId/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"parkingRecord",
+										"parkedVehicles",
+										"mostRegistered",
+										"parkingId",
+										"1",
+										"userId",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Set of HTTP requests to obtain the indicators for the user with partner role"
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"socio@mail.com\",\r\n    \"password\": \"socio\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "parking record entry",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzb2Npb0BtYWlsLmNvbSIsImV4cCI6MTcwNjQ3ODE4OCwicm9sZSI6IlNPQ0lPIiwiaWQiOjd9.E3N5_qFG5dh7D5yZS0BdaFOwFLkmHyPlEt-17GIAog0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plate\": \"123HT4\",\r\n    \"parkingId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/parkingRecord/entry",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"parkingRecord",
+								"entry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "parking record exit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzb2Npb0BtYWlsLmNvbSIsImV4cCI6MTcwNjQ3ODE4OCwicm9sZSI6IlNPQ0lPIiwiaWQiOjd9.E3N5_qFG5dh7D5yZS0BdaFOwFLkmHyPlEt-17GIAog0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plate\": \"123HT4\",\r\n    \"parkingId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/parkingRecord/exit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"parkingRecord",
+								"exit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list associated parking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzb2Npb0BtYWlsLmNvbSIsImV4cCI6MTcwNjQ3ODE4OCwicm9sZSI6IlNPQ0lPIiwiaWQiOjd9.E3N5_qFG5dh7D5yZS0BdaFOwFLkmHyPlEt-17GIAog0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/parking/list/userId/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"parking",
+								"list",
+								"userId",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List vehicles associated parking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzb2Npb0BtYWlsLmNvbSIsImV4cCI6MTcwNjQ3ODE4OCwicm9sZSI6IlNPQ0lPIiwiaWQiOjd9.E3N5_qFG5dh7D5yZS0BdaFOwFLkmHyPlEt-17GIAog0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/parkingRecord/parkedVehicles/parkingId/1/userId/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"parkingRecord",
+								"parkedVehicles",
+								"parkingId",
+								"1",
+								"userId",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Set of HTTP requests for the user with partner role"
+		}
+	]
+}
